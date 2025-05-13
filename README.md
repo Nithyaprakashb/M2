@@ -12,8 +12,34 @@ Write a C program to print even numbers ranging from M to N (including M and N v
 7.	Continue the loop until you have iterated through all numbers from M to N.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() {
+    int M, N; // Variables to store the range values
+
+    // Reading the values of M and N
+    printf("Enter the starting value (M): ");
+    scanf("%d", &M);
+
+    printf("Enter the ending value (N): ");
+    scanf("%d", &N);
+
+    // Printing even numbers from M to N
+    printf("Even numbers from %d to %d are: \n", M, N);
+    for (int i = M; i <= N; i++) {
+        if (i % 2 == 0) {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\n");
+
+    return 0;
+}
+```
 ## OUTPUT:
+![image](https://github.com/user-attachments/assets/ce6aca73-2943-441b-b7cc-64e65a6e13ce)
 
 
 
@@ -45,9 +71,30 @@ Write a C program to print the given triangular pattern using loop.
 5.	Continue the loop until you have printed the entire triangular pattern.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() {
+    int rows; // Variable to store the number of rows
+
+    // Reading the number of rows
+    printf("Enter the number of rows for the triangle: ");
+    scanf("%d", &rows);
+
+    // Printing the triangular pattern
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("* ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
 
 ## OUTPUT:
+![image](https://github.com/user-attachments/assets/a901eacc-fa48-4977-8baa-78261801732a)
 
 
 
@@ -74,9 +121,36 @@ Write a C program to perform addition and subtraction of two numbers using funct
 4.	Call the addition and subtraction functions, passing the two numbers as arguments.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+// Function for addition (with arguments, without return type)
+void add(int a, int b) {
+    printf("Addition: %d + %d = %d\n", a, b, a + b);
+}
+
+// Function for subtraction (with arguments, without return type)
+void subtract(int a, int b) {
+    printf("Subtraction: %d - %d = %d\n", a, b, a - b);
+}
+
+int main() {
+    int num1, num2;
+
+    // Reading two numbers from the user
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    // Calling the addition and subtraction functions
+    add(num1, num2);
+    subtract(num1, num2);
+
+    return 0;
+}
+```
 
 ## OUTPUT:
+![image](https://github.com/user-attachments/assets/96ace0df-ccd9-4124-bfb1-5252a63d492e)
 
 
 
@@ -106,9 +180,33 @@ Write a c program to find the sum of odd digits using for loop
 6.	Print the sum of odd digits.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() {
+    int num, sum = 0, digit;
+
+    // Reading the input number
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    // Calculating the sum of odd digits using for loop
+    for (; num > 0; num /= 10) {
+        digit = num % 10; // Extracting the last digit
+        if (digit % 2 != 0) { // Checking if the digit is odd
+            sum += digit;
+        }
+    }
+
+    // Displaying the result
+    printf("Sum of odd digits: %d\n", sum);
+
+    return 0;
+}
+```
 
 ## OUTPUT:
+![image](https://github.com/user-attachments/assets/e2db7c01-b02e-421f-a55e-c13d4931852a)
 
 
 
@@ -136,9 +234,39 @@ d.	After the loop, print the factorial value.
 5.	End
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+// User-defined function to calculate factorial
+void fact(int N) {
+    int i;
+    unsigned long long factorial = 1; // Using unsigned long long to handle large values
+
+    // Calculating factorial
+    for (i = 1; i <= N; i++) {
+        factorial *= i;
+    }
+
+    // Displaying the result
+    printf("Factorial of %d is: %llu\n", N, factorial);
+}
+
+int main() {
+    int N;
+
+    // Reading the value of N
+    printf("Enter a number to calculate factorial: ");
+    scanf("%d", &N);
+
+    // Calling the fact function
+    fact(N);
+
+    return 0;
+}
+```
 
 ## OUTPUT:
+![image](https://github.com/user-attachments/assets/4f22c3a8-aa25-497e-bc77-835b8b47dee8)
 
 ## RESULT:
 The program correctly computes the factorial of a given number using a separate function and displays the result.
